@@ -13,6 +13,11 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: hello-world:kube1
+        image: docalainguinto/gfu_repo:v001
         ports:
         - containerPort: 8080
+  strategy:
+    type: RollingUpdate
+    rolllingUpdate:
+        maxSurge: 40%
+        maxUnavailable: 0%
